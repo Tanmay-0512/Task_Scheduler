@@ -1,29 +1,65 @@
-✅ Task Scheduler (C++ Project)
+---
 
-A simple and interactive Task Scheduler implemented in C++, using STL containers and menu-driven execution. It supports adding tasks, prioritizing them, executing from both ends, grouping, and clearing all tasks.
+# ✅ Task Scheduler using Deque & List (C++)
 
-🚀 Features
+A **menu-driven console-based Task Scheduler** built using **C++ STL containers** like `deque` and `list`.
+This project allows users to add, execute, view, group, and clear tasks with priority handling from both ends.
 
-Add normal and high-priority tasks
+---
 
-Execute tasks from front or back
+## 🚀 Features
 
-View pending tasks
+✅ Add normal and high-priority tasks
+✅ Execute tasks from **front or back**
+✅ View all pending tasks
+✅ Group tasks by priority
+✅ Clear all scheduled tasks
+✅ Menu-driven user interface
 
-Group tasks by priority
+---
 
-Clear all tasks
+## 🧰 Concepts Used
 
-Interactive menu-driven flow
+| Concept                    | Purpose / Where Used                                 |
+| -------------------------- | ---------------------------------------------------- |
+| `deque`                    | Store tasks and execute from front/back              |
+| `list`                     | Group and organize tasks by priority                 |
+| `cin.ignore() + getline()` | Input handling for task names without newline issues |
+| `switch-case`              | For interactive user menu                            |
+| `clear()`                  | Remove all elements from the deque                   |
 
-🧠 Concepts Used
-Concept	Where Used	Purpose
-deque	Task storage (front & back operations)	Enables adding/executing from both ends
-list	Grouping tasks by priority	Demonstrates linked list-style organization
-cin.ignore() + getline()	String input handling	Prevents newline input issues
-switch-case	Menu selection	Makes interaction structured and readable
-clear()	Clearing deque	Simulates memory cleanup / reset
-📌 Sample Run
+---
+
+## 🧠 Scheduler Flow — Task Processing Logic
+
+```mermaid
+flowchart TD
+    A[Start Program] --> B[Display Menu]
+    B --> C{User Choice}
+    
+    C -->|1| D[Add Task at Back]
+    C -->|2| E[Add High Priority Task at Front]
+    C -->|3| F[Execute Task from Front]
+    C -->|4| G[Execute Task from Back]
+    C -->|5| H[View All Pending Tasks]
+    C -->|6| I[Group Tasks by Priority using List]
+    C -->|7| J[Clear All Tasks]
+    C -->|0| K[Exit Program]
+    
+    D --> B
+    E --> B
+    F --> B
+    G --> B
+    H --> B
+    I --> B
+    J --> B
+```
+
+---
+
+## 🎯 Sample Run
+
+```
 ========== Task Scheduler Menu ==========
 1. Add Task
 2. Add High Priority Task
@@ -57,25 +93,23 @@ Enter your choice: 3
 
 Enter your choice: 0
 👋 Exiting... Goodbye!
+```
 
-🛠️ How It Works
+---
 
-Normal Tasks → Added at the back
+## 📦 How to Run
 
-High Priority Tasks → Added at the front
+1️⃣ Copy the `.cpp` file into your project folder
+2️⃣ Compile using g++ (or any C++ compiler):
 
-Execute → From front or back using pop_front() / pop_back()
+```bash
+g++ task_scheduler.cpp -o scheduler
+```
 
-Grouping → Uses list to classify by priority
+3️⃣ Run the executable:
 
-Clear Memory → Uses deque.clear()
+```bash
+./scheduler
+```
 
-Menu Control → via switch-case
-
-✅ Ideal For
-
-✔️ STL practice
-✔️ Menu-driven programs
-✔️ College mini-projects
-✔️ Understanding deques & lists
-✔️ Task management simulations
+---
