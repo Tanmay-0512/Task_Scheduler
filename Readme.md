@@ -1,10 +1,29 @@
+✅ Task Scheduler (C++ Project)
+
+A simple and interactive Task Scheduler implemented in C++, using STL containers and menu-driven execution. It supports adding tasks, prioritizing them, executing from both ends, grouping, and clearing all tasks.
+
+🚀 Features
+
+Add normal and high-priority tasks
+
+Execute tasks from front or back
+
+View pending tasks
+
+Group tasks by priority
+
+Clear all tasks
+
+Interactive menu-driven flow
+
+🧠 Concepts Used
 Concept	Where Used	Purpose
-deque	To store and execute tasks from both ends	Demonstrates flexibility of double-ended queue
-list	To group tasks based on priority levels	Demonstrates linked list-based storage
-cin.ignore() + getline()	Used together for string input	Avoids newline issues
-switch-case	Menu-driven selection	Makes it user interactive
-clear()	To remove all elements from deque	Memory clean-up simulation
-🎯 Sample Run
+deque	Task storage (front & back operations)	Enables adding/executing from both ends
+list	Grouping tasks by priority	Demonstrates linked list-style organization
+cin.ignore() + getline()	String input handling	Prevents newline input issues
+switch-case	Menu selection	Makes interaction structured and readable
+clear()	Clearing deque	Simulates memory cleanup / reset
+📌 Sample Run
 ========== Task Scheduler Menu ==========
 1. Add Task
 2. Add High Priority Task
@@ -38,3 +57,25 @@ Enter your choice: 3
 
 Enter your choice: 0
 👋 Exiting... Goodbye!
+
+🛠️ How It Works
+
+Normal Tasks → Added at the back
+
+High Priority Tasks → Added at the front
+
+Execute → From front or back using pop_front() / pop_back()
+
+Grouping → Uses list to classify by priority
+
+Clear Memory → Uses deque.clear()
+
+Menu Control → via switch-case
+
+✅ Ideal For
+
+✔️ STL practice
+✔️ Menu-driven programs
+✔️ College mini-projects
+✔️ Understanding deques & lists
+✔️ Task management simulations
